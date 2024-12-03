@@ -1,0 +1,348 @@
+version 3
+run LowQualityQoS-0-20241117-23:37:19-14596
+attr configname LowQualityQoS
+attr datetime 20241117-23:37:19
+attr datetimef 20241117-233719
+attr experiment LowQualityQoS
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MbwaNetwork
+attr processid 14596
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config description "Simulasi dengan prioritas rendah dan error tinggi"
+config MbwaNetwork.qosPriority 1
+config MbwaNetwork.maxLatency 0.2s
+config MbwaNetwork.modulationType "\"QAM16\""
+config MbwaNetwork.errorProbability 0.1
+config network MbwaNetwork
+config debug-on-errors true
+config sim-time-limit 30s
+config MbwaNetwork.numHosts 10
+config MbwaNetwork.txRate 1000000bps
+config MbwaNetwork.modulationType "\"BPSK\""
+config MbwaNetwork.errorProbability 0.05
+config MbwaNetwork.numChannels 5
+config MbwaNetwork.qosPriority 1
+config MbwaNetwork.maxLatency 0.1s
+config MbwaNetwork.packetDropThreshold 0.02
+config MbwaNetwork.baseStation.enableCRC true
+config MbwaNetwork.baseStation.crcPolynomial 0x04C11DB7
+config MbwaNetwork.baseStation.enableHARQ true
+config MbwaNetwork.baseStation.harqBufferSize 10
+config MbwaNetwork.host[*].qosPriority "intuniform(1, 5)"
+config MbwaNetwork.host[*].positionUpdateLimit 10s
+config MbwaNetwork.host[*].positionUpdateDuration 25s
+config **.pkLenBits 1024b
+config **.iaTime 1s
+config **.x "uniform(0m, 1000m)"
+config **.y "uniform(0m, 1000m)"
+config **.speed "uniform(10mps, 30mps)"
+config **.direction "uniform(0deg, 360deg)"
+config **.idleAnimationSpeed 1
+config **.transmissionEdgeAnimationSpeed 1e-6
+config **.midTransmissionAnimationSpeed 1e-1
+config MbwaNetwork.baseStation.multiplexingType "\"TDM\""
+config MbwaNetwork.baseStation.numSubcarriers 2
+config MbwaNetwork.baseStation.numChannels 4
+
+par MbwaNetwork.baseStation typename "\"BaseStation\""
+par MbwaNetwork.baseStation numSubcarriers 2
+par MbwaNetwork.baseStation numChannels 4
+par MbwaNetwork.baseStation multiplexingType "\"TDM\""
+par MbwaNetwork.baseStation tdmSlotDuration 0.2s
+attr unit s
+par MbwaNetwork.baseStation txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.baseStation modulationType "\"QAM16\""
+par MbwaNetwork.baseStation interferenceThreshold 0.5
+par MbwaNetwork.baseStation signalStrength 1
+par MbwaNetwork.baseStation noiseLevel 0.01
+par MbwaNetwork.baseStation errorProbability 0.1
+par MbwaNetwork.baseStation x 500m
+attr unit m
+par MbwaNetwork.baseStation y 500m
+attr unit m
+par MbwaNetwork.host[0] typename "\"MbwaHost\""
+par MbwaNetwork.host[0] qosPriority 5
+par MbwaNetwork.host[0] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[0] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[0] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[0] modulationType "\"QAM16\""
+par MbwaNetwork.host[0] errorProbability 0.1
+par MbwaNetwork.host[0] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[0] iaTime 1s
+attr unit s
+par MbwaNetwork.host[0] x 592.845m
+attr unit m
+par MbwaNetwork.host[0] y 715.189m
+attr unit m
+par MbwaNetwork.host[0] signalStrength 1
+par MbwaNetwork.host[0] idleAnimationSpeed 1
+par MbwaNetwork.host[0] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[0] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[0] speed 26.8853mps
+attr unit mps
+par MbwaNetwork.host[0] direction 216.995deg
+attr unit deg
+par MbwaNetwork.host[0] controlAnimationSpeed true
+par MbwaNetwork.host[1] typename "\"MbwaHost\""
+par MbwaNetwork.host[1] qosPriority 4
+par MbwaNetwork.host[1] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[1] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[1] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[1] modulationType "\"QAM16\""
+par MbwaNetwork.host[1] errorProbability 0.1
+par MbwaNetwork.host[1] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[1] iaTime 1s
+attr unit s
+par MbwaNetwork.host[1] x 544.883m
+attr unit m
+par MbwaNetwork.host[1] y 847.252m
+attr unit m
+par MbwaNetwork.host[1] signalStrength 1
+par MbwaNetwork.host[1] idleAnimationSpeed 1
+par MbwaNetwork.host[1] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[1] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[1] speed 18.4731mps
+attr unit mps
+par MbwaNetwork.host[1] direction 224.483deg
+attr unit deg
+par MbwaNetwork.host[1] controlAnimationSpeed true
+par MbwaNetwork.host[2] typename "\"MbwaHost\""
+par MbwaNetwork.host[2] qosPriority 3
+par MbwaNetwork.host[2] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[2] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[2] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[2] modulationType "\"QAM16\""
+par MbwaNetwork.host[2] errorProbability 0.1
+par MbwaNetwork.host[2] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[2] iaTime 1s
+attr unit s
+par MbwaNetwork.host[2] x 437.587m
+attr unit m
+par MbwaNetwork.host[2] y 297.535m
+attr unit m
+par MbwaNetwork.host[2] signalStrength 1
+par MbwaNetwork.host[2] idleAnimationSpeed 1
+par MbwaNetwork.host[2] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[2] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[2] speed 27.8355mps
+attr unit mps
+par MbwaNetwork.host[2] direction 20.4167deg
+attr unit deg
+par MbwaNetwork.host[2] controlAnimationSpeed true
+par MbwaNetwork.host[3] typename "\"MbwaHost\""
+par MbwaNetwork.host[3] qosPriority 1
+par MbwaNetwork.host[3] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[3] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[3] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[3] modulationType "\"QAM16\""
+par MbwaNetwork.host[3] errorProbability 0.1
+par MbwaNetwork.host[3] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[3] iaTime 1s
+attr unit s
+par MbwaNetwork.host[3] x 272.656m
+attr unit m
+par MbwaNetwork.host[3] y 383.442m
+attr unit m
+par MbwaNetwork.host[3] signalStrength 1
+par MbwaNetwork.host[3] idleAnimationSpeed 1
+par MbwaNetwork.host[3] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[3] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[3] speed 19.5533mps
+attr unit mps
+par MbwaNetwork.host[3] direction 285.021deg
+attr unit deg
+par MbwaNetwork.host[3] controlAnimationSpeed true
+par MbwaNetwork.host[4] typename "\"MbwaHost\""
+par MbwaNetwork.host[4] qosPriority 1
+par MbwaNetwork.host[4] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[4] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[4] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[4] modulationType "\"QAM16\""
+par MbwaNetwork.host[4] errorProbability 0.1
+par MbwaNetwork.host[4] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[4] iaTime 1s
+attr unit s
+par MbwaNetwork.host[4] x 392.785m
+attr unit m
+par MbwaNetwork.host[4] y 925.597m
+attr unit m
+par MbwaNetwork.host[4] signalStrength 1
+par MbwaNetwork.host[4] idleAnimationSpeed 1
+par MbwaNetwork.host[4] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[4] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[4] speed 26.7216mps
+attr unit mps
+par MbwaNetwork.host[4] direction 25.573deg
+attr unit deg
+par MbwaNetwork.host[4] controlAnimationSpeed true
+par MbwaNetwork.host[5] typename "\"MbwaHost\""
+par MbwaNetwork.host[5] qosPriority 1
+par MbwaNetwork.host[5] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[5] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[5] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[5] modulationType "\"QAM16\""
+par MbwaNetwork.host[5] errorProbability 0.1
+par MbwaNetwork.host[5] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[5] iaTime 1s
+attr unit s
+par MbwaNetwork.host[5] x 87.1293m
+attr unit m
+par MbwaNetwork.host[5] y 648.172m
+attr unit m
+par MbwaNetwork.host[5] signalStrength 1
+par MbwaNetwork.host[5] idleAnimationSpeed 1
+par MbwaNetwork.host[5] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[5] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[5] speed 10.4044mps
+attr unit mps
+par MbwaNetwork.host[5] direction 132.567deg
+attr unit deg
+par MbwaNetwork.host[5] controlAnimationSpeed true
+par MbwaNetwork.host[6] typename "\"MbwaHost\""
+par MbwaNetwork.host[6] qosPriority 4
+par MbwaNetwork.host[6] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[6] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[6] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[6] modulationType "\"QAM16\""
+par MbwaNetwork.host[6] errorProbability 0.1
+par MbwaNetwork.host[6] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[6] iaTime 1s
+attr unit s
+par MbwaNetwork.host[6] x 957.155m
+attr unit m
+par MbwaNetwork.host[6] y 778.157m
+attr unit m
+par MbwaNetwork.host[6] signalStrength 1
+par MbwaNetwork.host[6] idleAnimationSpeed 1
+par MbwaNetwork.host[6] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[6] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[6] speed 12.807mps
+attr unit mps
+par MbwaNetwork.host[6] direction 313.204deg
+attr unit deg
+par MbwaNetwork.host[6] controlAnimationSpeed true
+par MbwaNetwork.host[7] typename "\"MbwaHost\""
+par MbwaNetwork.host[7] qosPriority 1
+par MbwaNetwork.host[7] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[7] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[7] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[7] modulationType "\"QAM16\""
+par MbwaNetwork.host[7] errorProbability 0.1
+par MbwaNetwork.host[7] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[7] iaTime 1s
+attr unit s
+par MbwaNetwork.host[7] x 978.618m
+attr unit m
+par MbwaNetwork.host[7] y 473.608m
+attr unit m
+par MbwaNetwork.host[7] signalStrength 1
+par MbwaNetwork.host[7] idleAnimationSpeed 1
+par MbwaNetwork.host[7] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[7] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[7] speed 25.9832mps
+attr unit mps
+par MbwaNetwork.host[7] direction 288.328deg
+attr unit deg
+par MbwaNetwork.host[7] controlAnimationSpeed true
+par MbwaNetwork.host[8] typename "\"MbwaHost\""
+par MbwaNetwork.host[8] qosPriority 4
+par MbwaNetwork.host[8] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[8] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[8] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[8] modulationType "\"QAM16\""
+par MbwaNetwork.host[8] errorProbability 0.1
+par MbwaNetwork.host[8] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[8] iaTime 1s
+attr unit s
+par MbwaNetwork.host[8] x 520.477m
+attr unit m
+par MbwaNetwork.host[8] y 780.529m
+attr unit m
+par MbwaNetwork.host[8] signalStrength 1
+par MbwaNetwork.host[8] idleAnimationSpeed 1
+par MbwaNetwork.host[8] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[8] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[8] speed 23.5776mps
+attr unit mps
+par MbwaNetwork.host[8] direction 42.5788deg
+attr unit deg
+par MbwaNetwork.host[8] controlAnimationSpeed true
+par MbwaNetwork.host[9] typename "\"MbwaHost\""
+par MbwaNetwork.host[9] qosPriority 1
+par MbwaNetwork.host[9] positionUpdateLimit 10s
+attr unit s
+par MbwaNetwork.host[9] positionUpdateDuration 25s
+attr unit s
+par MbwaNetwork.host[9] txRate 1e+06bps
+attr unit bps
+par MbwaNetwork.host[9] modulationType "\"QAM16\""
+par MbwaNetwork.host[9] errorProbability 0.1
+par MbwaNetwork.host[9] pkLenBits 1024b
+attr unit b
+par MbwaNetwork.host[9] iaTime 1s
+attr unit s
+par MbwaNetwork.host[9] x 582.02m
+attr unit m
+par MbwaNetwork.host[9] y 143.353m
+attr unit m
+par MbwaNetwork.host[9] signalStrength 1
+par MbwaNetwork.host[9] idleAnimationSpeed 1
+par MbwaNetwork.host[9] transmissionEdgeAnimationSpeed 1e-06
+par MbwaNetwork.host[9] midTransmissionAnimationSpeed 0.1
+par MbwaNetwork.host[9] speed 20.7475mps
+attr unit mps
+par MbwaNetwork.host[9] direction 340.081deg
+attr unit deg
+par MbwaNetwork.host[9] controlAnimationSpeed true
+par MbwaNetwork typename "\"MbwaNetwork\""
+par MbwaNetwork numHosts 10
+par MbwaNetwork txRate 1e+06bps
+attr unit bps
+par MbwaNetwork modulationType "\"QAM16\""
+par MbwaNetwork errorProbability 0.1
+

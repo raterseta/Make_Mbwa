@@ -1,0 +1,115 @@
+version 3
+run StandardQualityQoS-0-20241117-23:18:18-12780
+attr configname StandardQualityQoS
+attr datetime 20241117-23:18:18
+attr datetimef 20241117-231818
+attr experiment StandardQualityQoS
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MbwaNetwork
+attr processid 12780
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config description "Simulasi dengan QoS sedang untuk aplikasi data reguler"
+config MbwaNetwork.qosPriority 3
+config MbwaNetwork.maxLatency 0.1s
+config MbwaNetwork.modulationType "\"BPSK\""
+config MbwaNetwork.errorProbability 0.05
+config network MbwaNetwork
+config debug-on-errors true
+config sim-time-limit 30s
+config MbwaNetwork.numHosts 10
+config MbwaNetwork.txRate 1000000bps
+config MbwaNetwork.modulationType "\"BPSK\""
+config MbwaNetwork.errorProbability 0.05
+config MbwaNetwork.numChannels 5
+config MbwaNetwork.qosPriority 1
+config MbwaNetwork.maxLatency 0.1s
+config MbwaNetwork.packetDropThreshold 0.02
+config MbwaNetwork.baseStation.enableCRC true
+config MbwaNetwork.baseStation.crcPolynomial 0x04C11DB7
+config MbwaNetwork.baseStation.enableHARQ true
+config MbwaNetwork.baseStation.harqBufferSize 10
+config MbwaNetwork.host[*].qosPriority "intuniform(1, 5)"
+config MbwaNetwork.host[*].positionUpdateLimit 10s
+config MbwaNetwork.host[*].positionUpdateDuration 25s
+config **.pkLenBits 1024b
+config **.iaTime 1s
+config **.x "uniform(0m, 1000m)"
+config **.y "uniform(0m, 1000m)"
+config **.speed "uniform(10mps, 30mps)"
+config **.direction "uniform(0deg, 360deg)"
+config **.idleAnimationSpeed 1
+config **.transmissionEdgeAnimationSpeed 1e-6
+config **.midTransmissionAnimationSpeed 1e-1
+config MbwaNetwork.baseStation.multiplexingType "\"TDM\""
+config MbwaNetwork.baseStation.numSubcarriers 2
+config MbwaNetwork.baseStation.numChannels 4
+
+vector 0 MbwaNetwork.host[0] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 1 MbwaNetwork.host[1] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 2 MbwaNetwork.host[2] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 3 MbwaNetwork.host[3] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 4 MbwaNetwork.host[4] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 5 MbwaNetwork.host[5] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 6 MbwaNetwork.host[6] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 7 MbwaNetwork.host[7] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 8 MbwaNetwork.host[8] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+vector 9 MbwaNetwork.host[9] radioState:vector ETV
+attr enum IDLE=0,TRANSMIT=1
+attr recordingmode vector
+attr source state
+attr title "Radio state"
+0	0	0	0
+1	0	0	0
+2	0	0	0
+3	0	0	0
+4	0	0	0
+5	0	0	0
+6	0	0	0
+7	0	0	0
+8	0	0	0
+9	0	0	0
+
